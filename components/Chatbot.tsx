@@ -84,6 +84,7 @@ export default function Chatbot() {
 
   return (
     <div className="max-w-2xl mx-auto h-screen flex flex-col p-4 bg-gradient-to-br from-gray-900 to-black text-white">
+
       {/* Header */}
       <div className="flex items-center gap-3 mb-4 backdrop-blur-lg bg-white/5 p-3 rounded-2xl shadow-lg">
         <div className="h-10 w-10 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center text-lg font-bold">
@@ -115,23 +116,27 @@ export default function Chatbot() {
       </div>
 
       {/* Input Box */}
-      <div className="mt-4 flex gap-2">
+      <div className="mt-4 flex gap-2 flex-wrap sm:flex-nowrap">
+
         <input
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && ask()}
           placeholder="Ask something about my resume..."
-          className="flex-1 p-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="flex-1 p-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 
+                     focus:outline-none focus:ring-2 focus:ring-blue-500 w-full sm:w-auto"
         />
 
         <button
           onClick={ask}
-          className="px-6 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl shadow-lg hover:opacity-90 transition"
+          className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl shadow-lg hover:opacity-90 transition 
+                     w-full sm:w-auto"
         >
           Send
         </button>
+
       </div>
+
     </div>
   );
 }
-
